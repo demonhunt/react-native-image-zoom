@@ -389,6 +389,7 @@ export default class ImageViewer extends React.Component<Props, State> {
               let zoom = this.scale + distanceDiff;
 
               if (zoom < (this!.props!.minScale || 0)) {
+                this.props.callBack()
                 zoom = this!.props!.minScale || 0;
               }
               if (zoom > (this!.props!.maxScale || 0)) {
